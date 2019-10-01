@@ -12,7 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = Auth::user();
+    if ($user) {
+      if ($user -> isAdmin()) {
+        echo "This user is an administrator";
+      } else {
+        echo "This user is not an administrator";
+      }
+    } else {
+      return view('welcome');
+    }
 });
 
 Auth::routes();
