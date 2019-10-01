@@ -23,20 +23,21 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $edwin = '';
-        $edwin2 = '';
-        $request->session()->put(['edwin' => 'potato']);
-        session(['edwin2' => 'onion']);
-
-        //dd($request);
-
-        //$edwin = $request->session()->get('edwin');
-        $edwin2 = session('edwin2');
-        $request->session()->forget('edwin');
-        $request->session()->flush();
-        $edwin2 = session('edwin2');
-        $edwin = $request->session()->get('edwin');
-        //return $request->session()->all();
-        return view('home', compact('edwin', 'edwin2'));
+        // $edwin = '';
+        // $edwin2 = '';
+        // $request->session()->put(['edwin' => 'potato']);
+        // session(['edwin2' => 'onion']);
+        //
+        // //dd($request);
+        //
+        // //$edwin = $request->session()->get('edwin');
+        // $edwin2 = session('edwin2');
+        // $request->session()->forget('edwin');
+        // $request->session()->flush();
+        // $edwin2 = session('edwin2');
+        // $edwin = $request->session()->get('edwin');
+        // //return $request->session()->all();
+        $request->session()->flash('message', "THIS IS A FLASH MESSAGE");
+        return view('home');
     }
 }

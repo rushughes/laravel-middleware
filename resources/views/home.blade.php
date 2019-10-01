@@ -16,9 +16,6 @@
                     @endif
 
                     You are logged in<br />
-                    Edwin is a: {{$edwin}}
-                    Edwin2 is a: {{$edwin2}}
-                </div>
             </div>
         </div>
     </div>
